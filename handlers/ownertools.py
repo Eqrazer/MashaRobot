@@ -30,7 +30,7 @@ from pyrogram.types import Message
 
 
 # Stats Of Your Bot
-@Client.on_message(command("stats"))
+@Client.on_message(command("mstats"))
 @sudo_users_only
 async def botstats(_, message: Message):
     total, used, free = shutil.disk_usage(".")
@@ -50,7 +50,7 @@ async def botstats(_, message: Message):
 
 @Client.on_message(
     filters.private
-    & filters.command("broadcast")
+    & filters.command("broadcastm")
     & filters.user(OWNER_ID)
     & filters.reply
 )
